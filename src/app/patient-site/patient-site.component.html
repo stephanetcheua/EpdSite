@@ -1,0 +1,66 @@
+
+<div *ngIf="patient&&epd">
+  <app-patient-header
+    [logo]="patient"> </app-patient-header>
+
+  <div class="thumb-box2">
+    <div class="container">
+      <app-patient-stammdaten
+        [patient]="patient"></app-patient-stammdaten>
+    </div>
+  </div>
+
+
+  <div class="thumb-box3" id="careteam">
+    <div class="container">
+      <app-patient-care-team
+        [careteam]="patient.careTeam"></app-patient-care-team>
+    </div>
+  </div>
+
+  <div class="stellar-section">
+    <div class="thumb-box1" data-stellar-background-ratio="0.3" [ngStyle]="{ 'background-image': getBackground(1)}" >
+      <div class="container" style="height:100px">
+      </div>
+    </div>
+  </div>
+
+  <div class="thumb-box3" id="erkrankungen">
+    <div class="container">
+      <app-patient-krankheiten
+        [krankheiten]="patient.erkrankungen">
+      </app-patient-krankheiten>
+    </div>
+  </div>
+
+  <div class="stellar-section">
+    <div class="thumb-box1" data-stellar-background-ratio="0.5" [ngStyle]="{ 'background-image': getBackground(0)}">
+      <div class="container" style="height:100px">
+      </div>
+    </div>
+  </div>
+
+  <div class="thumb-box3" id="medikament">
+    <div class="container">
+      <app-patient-medikament-list
+        [medikament]="patient.medikament"></app-patient-medikament-list>
+    </div>
+  </div>
+
+  <div class="stellar-section">
+    <div class="thumb-box1" data-stellar-background-ratio="0.5" [ngStyle]="{ 'background-image': getBackground(1)}">
+      <div class="container" style="height:100px">
+      </div>
+    </div>
+  </div>
+
+  <div class="thumb-box3" id="zugriffprotokoll">
+    <div class="container">
+      <app-patient-zugriffsprotokoll
+        [protokoll]="patient.zugriffsprotokoll">
+      </app-patient-zugriffsprotokoll>
+    </div>
+  </div>
+  <app-region-footer [epd]="epd"></app-region-footer>
+</div>
+

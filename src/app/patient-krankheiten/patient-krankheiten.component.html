@@ -1,0 +1,13 @@
+<div class="row">
+  <strong>Krankheiten</strong>
+  <div *ngFor="let result of krankheiten" [class]="getcontentcenter()" data-wow-delay="0.3s">
+    <div class="thumb-pad1">
+      <div class="thumbnail">
+        <div class="caption">
+          <strong>{{result.title}}</strong>
+          <p>{{result.beschreibung}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

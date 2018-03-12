@@ -1,0 +1,16 @@
+<!--<div *ngIf="!patient&&!epd">Unbekannten Patient.</div>-->
+<!--<div *ngIf="patient&&epd">-->
+<div class="row">
+  <strong>Zugriffsprotokoll</strong>
+  <div *ngFor="let result of protokoll" [class]="getcontentcenter()" data-wow-delay="0.3s">
+    <div class="thumb-pad1">
+      <div class="thumbnail">
+        <div class="caption">
+          <p> Zugrifft von :{{result.zugriffvon}}</p>
+          <p>Zeitpunkt :{{result.zeitpunkt}}</p>
+          <p>geänderte Daten :{{result.geaendereDaten[0]}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,158 @@
+{
+  "name": "Region Wetzlar",
+  "beschreibung": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excep turi sint occaecati cupiditate non provident, similique sunt in culpa qui fficia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctioam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.",
+  "casinos": [
+    {
+      "url": "/casino",
+      "id": "Wetzlar1",
+      "title": "Billard Cafe I + II",
+      "logoUrl": "assets/wetzlar/apothele-logo.png",
+      "description": "Asum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitaullaboris nisi ut aliquip.",
+      "oeffnungszeiten": [
+        {
+          "description": "Öffnungszeiten Spielhalle",
+          "times": [
+            {
+              "day": "Mo - Sa",
+              "time": "10:00 - 24:00Uhr"
+            },
+            {
+              "day": "So",
+              "time": "11:00 - 24:00Uhr"
+            }
+          ]
+        },
+        {
+          "description": "Öffnungszeiten Bistro",
+          "times": [
+            {
+              "day": "Mo - Sa",
+              "time": "06:00 - 24:00Uhr"
+            },
+            {
+              "day": "So",
+              "time": "11:00 - 24:00Uhr"
+            }
+          ]
+        }
+      ],
+      "zutrittskontrollen": [
+        {
+          "id": "playid",
+          "image": "assets/img/logo_playid.png",
+          "title": "playID",
+          "description": "Mit playID erfüllen wir problemlos, einfach und zuverlässig alle gesetzlichen Anforderungen und Vorgaben der Landesspielhallengesetze."
+        },
+        {
+          "id": "checkin",
+          "image": "assets/img/logo_checkin.jpg",
+          "title": "Merkur Check In",
+          "description": "Das MERKUR Check‐In‐System ist ein System zur Einlasskontrolle aus dem Hause Gauselmann gemäß den jeweiligen gesetzlichen Bestimmungen."
+        }
+      ],
+      "photos": [
+        {
+          "url": "assets/wetzlar/wetzlar1_foto1.jpg",
+          "urlMobile": "assets/wetzlar/wetzlar1_foto2_m.jpg"
+        },
+        {
+          "url": "assets/wetzlar/wetzlar1_foto2.jpg",
+          "urlMobile": "assets/wetzlar/wetzlar1_foto2_m.jpg"
+        }
+      ],
+      "address": {
+        "title": "Billard Cafe I + II",
+        "strasse": "Langgasse 50",
+        "plz": "35578",
+        "stadt": "Wetzlar",
+        "telefon": "06441-47988",
+        "latitude": 50.557477,
+        "longitude": 8.497868
+      }
+    },
+    {
+      "url": "/casino",
+      "id": "Wetzlar2",
+      "title": "DK-Spielothek",
+      "logoUrl": "assets/wetzlar/DkSpielhalle-Logo.png",
+      "description": "Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud laboris nisi ut aliquip.",
+      "oeffnungszeiten": [
+        {
+          "description": "Öffnungszeiten Spielhalle",
+          "times": [
+            {
+              "day": "Mo - Sa",
+              "time": "10:00 - 24:00Uhr"
+            },
+            {
+              "day": "So",
+              "time": "11:00 - 24:00Uhr"
+            }
+          ]
+        }
+      ],
+      "zutrittskontrollen": [
+        {
+          "id": "checkin",
+          "image": "assets/img/logo_checkin.jpg",
+          "title": "Merkur Check In",
+          "description": "Das MERKUR Check‐In‐System ist ein System zur Einlasskontrolle aus dem Hause Gauselmann gemäß den jeweiligen gesetzlichen Bestimmungen."
+        }
+      ],
+      "name": "DK-Spielothek",
+      "beschreibung": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excep turi sint occaecati cupiditate non provident, similique sunt in culpa qui fficia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctioam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.",
+      "photos": [
+        {
+          "url": "assets/wetzlar/wetzlar2_foto1.jpg"
+        },
+        {
+          "url": "assets/wetzlar/wetzlar2_foto2.jpg"
+        }
+      ],
+      "address": {
+        "title": "DK-Spielothek",
+        "strasse": "Braunfelser Straße 88",
+        "plz": "35578",
+        "stadt": "Wetzlar",
+        "telefon": "06441-209036",
+        "latitude": 50.550695,
+        "longitude": 8.473572
+      }
+    },
+    {
+      "url": "/casino",
+      "id": "Wetzlar3",
+      "title": "Wetzlar3",
+      "logoUrl": "assets/wetzlar/DkSpielhalle-Logo.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitaullamco."
+    },
+    {
+      "url": "/casino",
+      "id": "Wetzlar4",
+      "title": "Wetzlar4",
+      "logoUrl": "assets/wetzlar/DkSpielhalle-Logo.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitaullamco."
+    }
+  ],
+  "logoUrl": "assets/wetzlar/DkSpielhalle-Logo.png",
+  "photos": [
+    {
+      "url": "assets/wetzlar/wetzlar1_foto1.jpg"
+    },
+    {
+      "url": "assets/wetzlar/wetzlar1_foto2.jpg"
+    },
+    {
+      "url": "assets/wetzlar/wetzlar2_foto1.jpg"
+    },
+    {
+      "url": "assets/wetzlar/wetzlar2_foto2.jpg"
+    }
+  ],
+  "map": {
+    "zoom": 13,
+    "latitude": 50.550695,
+    "longitude": 8.473572,
+   "markers": []
+  }
+}

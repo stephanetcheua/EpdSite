@@ -1,0 +1,17 @@
+<footer style="background-color: #393d3d">
+  <div class="container">
+    <div *ngIf="epd">
+      <div class="row">
+        <strong><img src={{epd?.logoUrl}} alt="logo" width="150px"></strong>
+        <!--<app-patient-krankheiten></app-patient-krankheiten>-->
+      </div>
+      <a style="color: #f9b009" href="" *ngIf="epd.patienten.length>1"> {{epd.title}} </a>
+      <a style="color: #f9b009" href="" *ngIf="epd.patienten.length==1"> {{epd.title}} </a>
+      <!--<div class="row">-->
+        <!--<ul class="list3">-->
+          <!--<li *ngFor="let patient of epd.patienten"><a  [routerLink]="['/patient',patient.fallnr]">{{patient.title}}</a></li>-->
+        <!--</ul>-->
+      <!--</div>-->
+    </div>
+  </div>
+</footer>
