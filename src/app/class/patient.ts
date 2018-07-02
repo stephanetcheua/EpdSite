@@ -9,59 +9,76 @@ export class Address {
 
 export class Photos {
   url: string;
-  urlMobile:string;
+  urlMobile: string;
 }
 
-export class Medikamente{
-  title:string;
-  beschreibung:string;
-  url:string;
+export class Medikamente {
+  title: string;
+  menge: string;
+  form: string;
+  start: string;
+  ende: string;
+  erstellungsdatum: string;
+  modifierungsdatum: string;
+  erstellerkuerzel: string;
 }
 
-export class Team{
-  title:string;
-  beschreibung:string;
-  name:string;
-  role:string;
-  url:string;
+export class Team {
+  title: string;
+  beschreibung: string;
+  name: string;
+  role: string;
 }
 
 export class Patient {
-  id:string;
+  id: string;
   fallnr: string;
-  url:string;
+  url: string;
   name: string;
   title: string;
   gebDatum: string;
+  geschlecht: string;
+  aufnahmeDatum: string;
+  entlassungDatum: string;
+  krankenkasse: string;
   beschreibung: string;
-  address: Address;
-  medikament: Medikamente[];
+  vitalparameter: Vitalzeichen[];
+  medikamente: Medikamente[];
   careTeam: Team[];
-  erkrankungen: Erkrankungen[];
-  zugriffsprotokoll:Zugriffsprotokoll[];
+  erkrankungen: Erkrankungen;
+  zugriffsprotokoll: Zugriffsprotokoll[];
 }
 
-export class Erkrankungen{
-  title:string;
-  beschreibung:string;
+export class Erkrankungen {
+  title: string;
+  hauptdiagnose: string;
+  nebendiagnose: string;
+  besonderheiten: string;
 
 }
-export class Zugriffsprotokoll{
-  zeitpunkt:string;
-  zugriffvon:string;
-  betrachtenteDaten:Daten[];
-  geaendereDaten:Daten[];
-  neueDaten:Daten[];
+export class Zugriffsprotokoll {
+  zeitpunkt: string;
+  zugriffvon: string;
+  geaenderteDaten: Daten[];
 }
-export class Daten{
-  title:string;
-  beschreibung:string;
+
+export class Vitalzeichen {
+  datum: string;
+  systolisch: string;
+  diastolisch: string;
+  puls: string;
+  temperatur: string;
+  zucker: string;
+}
+export class Daten {
+  title: string;
+  beschreibung: string;
 }
 export class Epd {
   id: string;
-  title:string;
+  title: string;
   beschreibung: string;
-  patienten:Patient[];
-  logoUrl:string;
-  hintergrundbilder:Photos[];
+  patienten: Patient[];
+  logoUrl: string;
+  hintergrundbilder: Photos[];
 }

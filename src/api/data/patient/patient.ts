@@ -1,194 +1,196 @@
-import {Epd} from "../../../app/class/patient";
+import {Epd} from '../../../app/class/patient';
 
 export const EPD: Epd [] = [
   {
-    id: "epd",
-    beschreibung: "Einrichtungsübergreifende Elektronische Patientenakten (eEPA) sollten von Beginn an als umfassende Behandlungsmanagement-Plattformen gedacht werden, welche dem Patienten und seinem gesamten Behandlungs-Team eine bestmögliche Steuerung der Gesundheitsversorgung erlauben. Weit über ein „Patientenfach“ hinausgehen sollten daher auch eEPA-Anwendungen für Patienten. ",
-    title: "Elektronische PD",
-    logoUrl: "assets/medical/doctor2.jpg",
+    id: 'epd',
+    beschreibung: 'Einrichtungsübergreifende Elektronische Patientenakten (eEPA) sollten von Beginn an als....endungen für Patienten. ',
+    title: 'E.Patientenakte',
+    logoUrl: 'assets/medical/doctor2.jpg',
     hintergrundbilder: [
       {
-        url: "assets/medical/hospital3.jpg",
-        urlMobile: "assets/medical/hospital3.jpg"
+        url: 'assets/medical/hospital3.jpg',
+        urlMobile: 'assets/medical/hospital3.jpg'
       },
       {
-        url: "assets/medical/doctor2.jpg",
-        urlMobile: "assets/medical/doctor2.jpg"
+        url: 'assets/medical/doctor2.jpg',
+        urlMobile: 'assets/medical/doctor2.jpg'
       },
-
     ],
-
     patienten: [
       {
-        id: "1",
-        url: "assets/medical/doctor3.jpg",
-        title: "Herr MusterMan",
-        beschreibung: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-        fallnr: "fv52df2",
-        name: "Max MusterMan",
-        gebDatum: "",
-
-        address:
+        id: '1',
+        url: 'assets/medical/doctor3.jpg',
+        title: 'Herr MusterMan',
+        beschreibung: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt luptua.',
+        fallnr: 'fv52df2',
+        krankenkasse: 'AOK HESSEN',
+        geschlecht: 'M',
+        name: 'Max MusterMan',
+        gebDatum: '12.01.1980',
+        aufnahmeDatum: '14.02.2018',
+        entlassungDatum: '20.06.2018',
+        vitalparameter: [
           {
-            plz: "35394",
-            stadt: "Giessen",
-            strasse: "Rödgener",
-            telefon: "017637613768",
-            title: "Privat"
+            datum: '29.06.2018',
+            diastolisch: '90',
+            systolisch: '122',
+            puls: '80 BPM',
+            temperatur: '37°C',
+            zucker: '100 mg',
           },
-
+          {
+            datum: '30.06.2018',
+            diastolisch: '90',
+            systolisch: '120',
+            puls: '85 BPM',
+            temperatur: '36°C',
+            zucker: '100 mg',
+          },
+        ],
         careTeam: [
           {
-            title: "Dr.Hans",
-            name: "Hans",
-            role: "admin",
-            beschreibung: "Arzt",
-            url: ""
+            title: 'Dr.Hans',
+            name: 'Hans',
+            role: 'admin',
+            beschreibung: 'Arzt',
           },
           {
-            title: "Frau Pfeiffer",
-            role: "Pflege",
-            name: "Pfeiffer",
-            beschreibung: "Pflegerin",
-            url: ""
+            title: 'Frau Pfeiffer',
+            role: 'Pflege',
+            name: 'Pfeiffer',
+            beschreibung: 'Pflegerin',
           }
         ],
-        erkrankungen: [
+        erkrankungen:
           {
-            title: "Diabetes mellitus,",
-            beschreibung: "Diabetes mellitus, die Zuckerkrankheit, ist die häufigste Stoffwechselerkrankung mit mehr als 6 Millionen Erkrankten allein in Deutschland.",
+            title: 'Diabetes Mellitus,',
+            hauptdiagnose: 'Diabetes Mellitus',
+            nebendiagnose: 'Chronische Nierenkrankheit',
+            besonderheiten: 'Essentielle (primäre) Hypertonie',
           },
-          {
-            title: "Fieber, Grippe, Erkältung",
-            beschreibung: "Zwischen Grippe und Erkältung wird oft nicht unterschieden. Doch werden die Erkrankungen durch verschiedene Erreger verursacht und sind für Betroffene unterschiedlich gefährlich .",
-          },
-        ],
 
-        medikament: [
+        medikamente: [
           {
-            title: "Aspirine",
-            beschreibung: "Acetyl...",
-            url: "assets/medical/aspirine.PNG",
+            title: 'Aspirine',
+            menge: '200mg',
+            form: 'kapseln',
+            start: '12.06.2018',
+            ende: '12.06.2018',
+            erstellungsdatum: '',
+            modifierungsdatum: '',
+            erstellerkuerzel: ''
           },
           {
-            title: "Voltaren",
-            beschreibung: "Voltaren...",
-            url: "assets/medical/voltarene.PNG",
+            title: 'Voltaren',
+            menge: '200mg',
+            form: 'kapseln',
+            start: '12.06.2018',
+            ende: '12.06.2018',
+            erstellungsdatum: '',
+            modifierungsdatum: '',
+            erstellerkuerzel: ''
           }
         ],
         zugriffsprotokoll: [
           {
-            zeitpunkt: "11.01.2017 09:50",
-            zugriffvon: "Dr Helmund",
-            geaendereDaten: [
+            zeitpunkt: '11.06.2018 09:50',
+            zugriffvon: 'Dr Sigmund',
+            geaenderteDaten: [
               {
-                title: "EKG Messungen",
-                beschreibung: "EKG Messungen von DR Müller"
-              }
-            ],
-            betrachtenteDaten: [
-              {
-                title: "EKG Messungen",
-                beschreibung: "EKG Messungen von DR Müller"
-
-              }
-            ],
-            neueDaten: [
-              {
-                title: "",
-                beschreibung: ""
+                title: 'Vitaparameter',
+                beschreibung: 'Eingabe von neuen Werte'
               }
             ]
-
           }
         ]
-
-      }
-      ,
+      },
       {
-        id: "2",
-        url: "assets/medical/doctor3.jpg",
-        title: "Herr Bastian",
-        beschreibung: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
-        fallnr: "kffe412",
-        name: "Bastian",
-        gebDatum: "12.05.1985",
-
-        address:
+        id: '2',
+        url: 'assets/medical/doctor3.jpg',
+        title: 'Frau MusterFrau',
+        beschreibung: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  et dolore magna aliquyam erat, sed diam voluptua.',
+        fallnr: 'kffe412',
+        name: 'MusterFrau',
+        aufnahmeDatum: '15.05.2018',
+        entlassungDatum: '25.07.2018',
+        gebDatum: '12.05.1985',
+        krankenkasse: 'TK Hessen',
+        geschlecht: 'W',
+        vitalparameter: [
           {
-            plz: "35394",
-            stadt: "Giessen",
-            strasse: "Credner",
-            telefon: "017637613768",
-            title: "Geschäftlich"
-          },
-
+          datum: '26.06.2018',
+          diastolisch: '88',
+          systolisch: '120',
+          puls: '85 BPM',
+          temperatur: '35°C',
+          zucker: '110 mg',
+        },
+          {
+            datum: '30.06.2018',
+            diastolisch: '90',
+            systolisch: '119',
+            puls: '85 BPM',
+            temperatur: '35°C',
+            zucker: '110 mg',
+          }
+          ],
         careTeam: [
           {
-            title: "Dr Tabet",
-            role: "Admin",
-            name: "Tabet",
-            beschreibung: "Chef Artz",
-            url: ""
+            title: 'Dr Sigmund',
+            role: 'Admin',
+            name: 'Sigmund',
+            beschreibung: 'Chef Artz',
           },
           {
-            title: "Dr Ngatchou",
-            role: "Admin",
-            name: "Ngatchou",
-            beschreibung: "OberArzt",
-            url: ""
+            title: 'Dr Ngatchou',
+            role: 'Admin',
+            name: 'Ngatchou',
+            beschreibung: 'OberArzt',
           }
         ],
-        erkrankungen: [
+        erkrankungen:
           {
-            title: "Kollagenosen",
-            beschreibung: "Der Begriff Kollagenosen umfasst zum Teil sehr unterschiedlich verlaufende Immunkrankheiten, die wie andere Rheuma-Erkrankungen zu chronischen Entzündungen führen",
+            title: 'Schizophrenie',
+            hauptdiagnose: 'Schizophrenie ',
+            nebendiagnose: 'Schizophrenie',
+            besonderheiten: 'keine',
+          },
+        medikamente: [
+          {
+            title: '52Wochen',
+            menge: '200mg',
+            form: 'kapseln',
+            start: '12.06.2018',
+            ende: '12.06.2018',
+            erstellungsdatum: '',
+            modifierungsdatum: '',
+            erstellerkuerzel: ''
           },
           {
-            title: "Alzheimer",
-            beschreibung: "Fast immer beginnt die Erkrankung mit Gedächtnisschwäche, zunächst vor allem Störungen von Kurzzeitgedächtnis und Konzentration, später auch Sprachstörungen."
-          }
-        ],
-        medikament: [
-          {
-            title: "52Wochen",
-            beschreibung: "Voltaren...",
-            url: "assets/medical/52wochen.jpg",
-          },
-          {
-            title: "Bauchweh",
-            beschreibung: "Tablette mit 500 mg Acetylsalicylsäure ,50 Tabletten",
-            url: "assets/medical/bauchweg.jpg",
+            title: 'Acetylsalicylsäure',
+            menge: '500 mg',
+            form: 'kapseln',
+            start: '12.06.2018',
+            ende: '12.06.2018',
+            erstellungsdatum: '',
+            modifierungsdatum: '',
+            erstellerkuerzel: ''
           }
         ],
         zugriffsprotokoll: [
           {
-            zeitpunkt: "11.01.2017 09:50",
-            zugriffvon: "Dr Helmund",
-            geaendereDaten: [
+            zeitpunkt: '11.01.2017 09:50',
+            zugriffvon: 'Dr Helmund',
+            geaenderteDaten: [
               {
-                title: "EKG Messungen",
-                beschreibung: "EKG Messungen von DR Müller"
-              }
-            ],
-            betrachtenteDaten: [
-              {
-                title: "EKG Messungen",
-                beschreibung: "EKG Messungen von DR Müller"
-
-              }
-            ],
-            neueDaten: [
-              {
-                title: "",
-                beschreibung: ""
+                title: 'EKG Messungen',
+                beschreibung: 'EKG Messungen von DR Müller'
               }
             ]
-
           }
         ]
 
       },
     ]
   }
-]
+];

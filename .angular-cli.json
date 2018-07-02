@@ -21,7 +21,8 @@
         "js/stellar/jquery.stellar.js",
         "js/jquery.ui.totop.js",
         "web.config",
-        ".htaccess"
+        ".htaccess",
+        ".htaccess-pi"
       ],
       "index": "index.html",
       "main": "main.ts",

@@ -1,14 +1,25 @@
 <div class="row">
   <strong>Medikamente</strong>
-  <div *ngFor="let medi of medikament" [class]="getcontentcenter()" data-wow-delay="0.3s">
-    <div class="thumb-pad1">
-      <div class="thumbnail">
-        <div class="caption">
-          <strong>{{medi.title}}</strong>
-          <p>{{medi.beschreibung}}</p>
-        </div>
-        <img  src={{medi.url}} alt="" height="75" width="100" >
-      </div>
-    </div>
+  <div  class="col-md-6 wow fadeInUp col-md-offset-3" data-wow-delay="0.3s">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Menge</th>
+      <th scope="col">Form</th>
+      <th scope="col">Start</th>
+      <th scope="col">Ende</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let medi of medikament">
+      <td>{{medi.title}}</td>
+      <td>{{medi.menge}}</td>
+      <td>{{medi.form}}</td>
+      <td>{{medi.start}}</td>
+      <td>{{medi.ende}}</td>
+    </tr>
+    </tbody>
+  </table>
   </div>
 </div>

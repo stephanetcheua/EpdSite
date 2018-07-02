@@ -1,12 +1,12 @@
 import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {Observable, Subscription} from "rxjs";
-import {RegionService} from "../services/region.service";
-import {isBoolean} from "util";
-import {Casino, Region} from "../class/region";
-import {isPlatformBrowser} from "@angular/common";
-import {Epd, Patient} from "../class/patient";
-import {EpdService} from "../services/epd.service";
+import {ActivatedRoute} from '@angular/router';
+import {Observable, Subscription} from 'rxjs';
+import {RegionService} from '../services/region.service';
+import {isBoolean} from 'util';
+import {Casino, Region} from '../class/region';
+import {isPlatformBrowser} from '@angular/common';
+import {Epd, Patient} from '../class/patient';
+import {EpdService} from '../services/epd.service';
 
 
 @Component({
@@ -31,7 +31,7 @@ export class PatientSiteComponent implements OnInit {
         // const title = (params['title'] || '');
         this.patient = null;
         this.epddataService.getPatient(id).subscribe(content => {
-          this.patient = content
+          this.patient = content;
         });
         this.epddataService.getEpd().subscribe(epd => {
           this.epd = epd;
@@ -57,12 +57,12 @@ export class PatientSiteComponent implements OnInit {
 
 
   getBackground(id: string): string {
-    //return "url(assets/wetzlar/Hintergrund_unscharf.jpg)"
-    let url = "";
+    // return 'url(assets/wetzlar/Hintergrund_unscharf.jpg)'
+    const url = '';
     if (this.urlsmall) {
-      return "url(" + this.epd.hintergrundbilder[id].urlMobile + ")";
+      return 'url(' + this.epd.hintergrundbilder[id].urlMobile + ')';
     } else {
-      return "url(" + this.epd.hintergrundbilder[id].url + ")";
+      return 'url(' + this.epd.hintergrundbilder[id].url + ')';
     }
 
   }

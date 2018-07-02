@@ -12,10 +12,10 @@ export class PatientMedikamentListComponent implements OnInit {
   ngOnInit() {
   }
   getcontentcenter() {
-    if(this.medikament.length==1) {
-      return "col-md-6 wow fadeInUp col-md-offset-3";
+    if (this.medikament.length === 1) {
+      return 'col-md-6 wow fadeInUp col-md-offset-3';
     } else {
-      return "col-sm-6 wow fadeInUp";
+      return 'col-sm-6 wow fadeInUp';
     }
   }
 }

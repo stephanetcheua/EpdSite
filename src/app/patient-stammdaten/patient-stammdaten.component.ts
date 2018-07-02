@@ -1,4 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
+import {Patient} from '../class/patient';
+import {EpdService} from '../services/epd.service';
 
 @Component({
   selector: 'app-patient-stammdaten',
@@ -7,9 +9,12 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class PatientStammdatenComponent implements OnInit {
   @Input() patient;
-  constructor() { }
+  selectedPatient: Patient;
+  constructor(private epddataService: EpdService) { }
 
   ngOnInit() {
   }
-
+  save(patient: Patient): void {
+   // this.epddataService.updateStammdaten(this.patient);
+  }
 }

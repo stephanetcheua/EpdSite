@@ -1,0 +1,27 @@
+<div class="row">
+  <strong>Vitalparameter</strong>
+  <div *ngIf="vitalzeichen"  class="col-md-6 wow fadeInUp col-md-offset-3" data-wow-delay="0.3s">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Datum</th>
+        <th scope="col">Systolisch</th>
+        <th scope="col">Diastolisch</th>
+        <th scope="col">Puls</th>
+        <th scope="col">T°</th>
+        <th scope="col">Zucker</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let zeichen of vitalzeichen">
+        <td>{{zeichen.datum}}</td>
+        <td>{{zeichen.systolisch}}</td>
+        <td>{{zeichen.diastolisch}}</td>
+        <td>{{zeichen.puls}}</td>
+        <td>{{zeichen.temperatur}}</td>
+        <td>{{zeichen.zucker}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

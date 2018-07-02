@@ -1,3 +1,26 @@
-<p class="title wow fadeInUp">{{patient.title}}</p>
-<p class="wow fadeInUp">{{patient.beschreibung}}</p>
+<div class="row">
+<strong>Stammdaten</strong>
+  <!--<div>-->
+    <!--<label>name:-->
+      <!--<input [(ngModel)]="patient.title" placeholder="name">-->
+      <!--<button (click)="save(patient)">save</button>-->
+    <!--</label>-->
+  <!--</div>-->
+ <div classs="col-md-6 wow fadeInUp col-md-offset-3">
+  <div class="col-sm-4">
+    <h4 style="color: #4cae4c">Name:<a style="color: #4cae4c">{{patient.title}}</a></h4>
+    <h4 style="color: #4cae4c">Fallnummer:<a style="color: #4cae4c"> {{patient.fallnr}}</a></h4>
+    <h4 style="color: #4cae4c">Krankenkasse:<a style="color: #4cae4c"> {{patient.krankenkasse}}</a></h4>
 
+  </div>
+  <div class="col-sm-4">
+    <h4 style="color: #4cae4c">Beh.Arzt:<a style="color: #4cae4c"> {{patient.careTeam[0].title}}</a></h4>
+    <h4 style="color: #4cae4c">Aufnahme:<a style="color: #4cae4c"> {{patient.aufnahmeDatum}}</a></h4>
+    <h4 style="color: #4cae4c">Entlassung:<a style="color: #4cae4c"> {{patient.entlassungDatum}}</a></h4>
+  </div>
+  <div class="col-sm-4">
+    <h4 style="color: #4cae4c">Geschlecht:<a style="color: #4cae4c"> {{patient.geschlecht}}</a></h4>
+    <h4 style="color: #4cae4c">GebDatum: <a style="color: #4cae4c">{{patient.gebDatum}}</a></h4>
+  </div>
+</div>
+</div>

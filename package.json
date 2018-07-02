@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "buildpro":"ng build --prod--base-href ./",
+    "buildpro": "ng build --prod--base-href ./",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -43,6 +43,7 @@
     "is-browser": "^2.0.1",
     "ng2-page-scroll": "^4.0.0-beta.7",
     "nodemailer": "^4.0.1",
+    "readable-stream": "^2.3.6",
     "rxjs": "^5.1.0",
     "typescript-collections": "^1.2.3",
     "zone.js": "^0.8.4"
