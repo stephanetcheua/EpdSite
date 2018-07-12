@@ -17,7 +17,6 @@ import {RegionService} from './services/region.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RegionContactFormComponent} from './region-contact-form/region-contact-form.component';
 import {FormService} from './services/form.service';
-import {AgmCoreModule} from '@agm/core';
 import {EpdService} from './services/epd.service';
 import {PatientSiteComponent} from './patient-site/patient-site.component';
 import {PatientZugriffsprotokollComponent} from './patient-zugriffsprotokoll/patient-zugriffsprotokoll.component';
@@ -27,6 +26,7 @@ import {PatientKrankheitenComponent} from './patient-krankheiten/patient-krankhe
 import {PatientHeaderComponent} from './patient-header/patient-header.component';
 import {PatientStammdatenComponent} from './patient-stammdaten/patient-stammdaten.component';
 import {RouterModule} from '@angular/router';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,10 +52,8 @@ import {RouterModule} from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     RoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBMC69m-xsQofnySoIJEzYXtuQJpv1xRes'
-    }),
     Ng2PageScrollModule.forRoot()
   ],
   providers: [RegionService, ConfigurationService, DataService, FormService, EpdService],

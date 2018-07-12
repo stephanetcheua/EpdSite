@@ -2,13 +2,13 @@ import {
   Component, OnInit, Inject, AfterViewChecked, AfterViewInit, AfterContentChecked,
   PLATFORM_ID
 } from '@angular/core';
-import {Observable, Subscription} from "rxjs";
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {RegionService} from "../services/region.service";
-import {isPlatformBrowser} from "@angular/common";
-import {Config} from "../class/configuration";
-import {EpdService} from "../services/epd.service";
-import {Epd, Photos} from "../class/patient";
+import {Observable, Subscription} from 'rxjs';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
+import {RegionService} from '../services/region.service';
+import {isPlatformBrowser} from '@angular/common';
+import {Config} from '../class/configuration';
+import {EpdService} from '../services/epd.service';
+import {Epd, Patient, Photos} from '../class/patient';
 
 @Component({
   selector: 'app-epd-site',
@@ -20,11 +20,12 @@ export class EpdSiteComponent implements OnInit {
 
 
   epd: Epd;
+  patienten: Patient;
   subscription: Subscription;
   bilder: Photos;
   urlsmall: boolean;
-  currentUrl:string;
-
+  currentUrl: string;
+  statusCode: number;
   constructor(private route: ActivatedRoute, private epddataService: EpdService, @Inject(PLATFORM_ID) private platformId: Object) {
 
   }
@@ -34,21 +35,21 @@ export class EpdSiteComponent implements OnInit {
       .subscribe(params => {
         var url = window.location.host;
         var config = new Config();
-        config.regionId=url;
-        console.log(url,config);
-        //const id = (params['id'] || '');
+        config.regionId = url;
+        console.log(url, config);
+        // const id = (params['id'] || '');
 
-        this.epddataService.getEpd().subscribe(epd => this.epd = epd);
-        //this.regiondataService.getBackgroundPhoto().subscribe(bilder => this.bilder = bilder);
+        this.epddataService.getPatienten().subscribe(patient => this.patienten = patient);
+        // this.regiondataService.getBackgroundPhoto().subscribe(bilder => this.bilder = bilder);
         if (isPlatformBrowser(this.platformId)) {
           var jQuery = (<any>window).jQuery;
           jQuery(document).ready(() => {
-            if (jQuery('html').hasClass('mobile')||jQuery('html').hasClass('android')
-              ||jQuery('html').hasClass('ios')||jQuery('html').hasClass('windows')||jQuery('html').hasClass('tablet')) {
-              this.urlsmall=true;
+            if (jQuery('html').hasClass('mobile') || jQuery('html').hasClass('android')
+              || jQuery('html').hasClass('ios') || jQuery('html').hasClass('windows') || jQuery('html').hasClass('tablet')) {
+              this.urlsmall = true;
 
             } else {
-              this.urlsmall=false;
+              this.urlsmall = false;
             }
           });
         }
@@ -57,20 +58,12 @@ export class EpdSiteComponent implements OnInit {
   }
 
   getBackground(id: string): string {
-    //return "url(assets/wetzlar/Hintergrund_unscharf.jpg)"
-    let url = "";
-    if(this.urlsmall){
-      return "url(" + this.epd.hintergrundbilder[id].urlMobile + ")";
-    }else{
-      return "url(" + this.epd.hintergrundbilder[id].url + ")";
+    let url = '';
+    if (this.urlsmall) {
+      return 'url(assets/medical/doctor2.jpg)';
+    }else {
+      return 'url(assets/medical/doctor2.jpg)';
     }
-    /*if ((window.screen.width) <= 768 || window.screen.width <= 1024) {
-     return "url" + this.region.hintergrundbilder[id].urlMobile + ")";
-     }
-     else {
-     return "url(" + this.region.hintergrundbilder[id].url + ")";
-     }*/
-
   }
 
   getBackgroundPhoto(id: string): any {

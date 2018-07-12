@@ -1,32 +1,28 @@
-<div *ngIf="!epd">Unbekannte EPD.</div>
-<div *ngIf="epd">
+<div *ngIf="!patienten">Unbekannte EPD.  </div>
+
+<div *ngIf="patienten">
   <!--<app-patient-header [logo]="epd.logoUrl"></app-patient-header>-->
 
   <div class="content">
     <div class="thumb-box2" id="ueberuns">
       <div class="container">
-        <app-region-description [epd]="epd"></app-region-description>
+        <app-region-description [epd]="patienten"></app-region-description>
       </div>
     </div>
-    <div class="thumb-box3" id="spielhallen">
+    <div class="thumb-box3" id="patienten">
       <div class="container">
-        <app-patienten-list [patienten]="epd.patienten"></app-patienten-list>
+        <app-patienten-list [patienten]="patienten"></app-patienten-list>
       </div>
     </div>
 
     <div class="stellar-section">
-      <div class="thumb-box1" data-stellar-background-ratio="0.3" [ngStyle]="{ 'background-image': getBackground(1)}" >
+      <div class="thumb-box1" data-stellar-background-ratio="0.3" [ngStyle]="{ 'background-image': getBackground('1')}" >
         <div class="container" style="height:100px">
         </div>
       </div>
     </div>
 
-    <!--<div class="thumb-box16" id="kontakt2">-->
-      <!--<div class="container">-->
-        <!--<app-region-contact-form>-->
-        <!--</app-region-contact-form>-->
-      <!--</div>-->
-    <!--</div>-->
   </div>
-  <app-region-footer [epd]="epd"></app-region-footer>
+  <app-region-footer [patient]="patienten"></app-region-footer>
 </div>
+<!--</div>-->

@@ -31,6 +31,7 @@ export const EPD: Epd [] = [
         entlassungDatum: '20.06.2018',
         vitalparameter: [
           {
+            id: '1',
             datum: '29.06.2018',
             diastolisch: '90',
             systolisch: '122',
@@ -39,6 +40,7 @@ export const EPD: Epd [] = [
             zucker: '100 mg',
           },
           {
+            id: '2',
             datum: '30.06.2018',
             diastolisch: '90',
             systolisch: '120',
@@ -49,12 +51,14 @@ export const EPD: Epd [] = [
         ],
         careTeam: [
           {
+            id: '1',
             title: 'Dr.Hans',
             name: 'Hans',
             role: 'admin',
             beschreibung: 'Arzt',
           },
           {
+            id: '2',
             title: 'Frau Pfeiffer',
             role: 'Pflege',
             name: 'Pfeiffer',
@@ -71,6 +75,7 @@ export const EPD: Epd [] = [
 
         medikamente: [
           {
+            id: '1',
             title: 'Aspirine',
             menge: '200mg',
             form: 'kapseln',
@@ -81,6 +86,7 @@ export const EPD: Epd [] = [
             erstellerkuerzel: ''
           },
           {
+            id: '2',
             title: 'Voltaren',
             menge: '200mg',
             form: 'kapseln',
@@ -118,6 +124,7 @@ export const EPD: Epd [] = [
         geschlecht: 'W',
         vitalparameter: [
           {
+            id: '1',
           datum: '26.06.2018',
           diastolisch: '88',
           systolisch: '120',
@@ -126,6 +133,7 @@ export const EPD: Epd [] = [
           zucker: '110 mg',
         },
           {
+            id: '2',
             datum: '30.06.2018',
             diastolisch: '90',
             systolisch: '119',
@@ -136,12 +144,14 @@ export const EPD: Epd [] = [
           ],
         careTeam: [
           {
+            id: '1',
             title: 'Dr Sigmund',
             role: 'Admin',
             name: 'Sigmund',
             beschreibung: 'Chef Artz',
           },
           {
+            id: '2',
             title: 'Dr Ngatchou',
             role: 'Admin',
             name: 'Ngatchou',
@@ -157,6 +167,7 @@ export const EPD: Epd [] = [
           },
         medikamente: [
           {
+            id: '1',
             title: '52Wochen',
             menge: '200mg',
             form: 'kapseln',
@@ -167,6 +178,7 @@ export const EPD: Epd [] = [
             erstellerkuerzel: ''
           },
           {
+            id: '2',
             title: 'Acetylsalicylsäure',
             menge: '500 mg',
             form: 'kapseln',

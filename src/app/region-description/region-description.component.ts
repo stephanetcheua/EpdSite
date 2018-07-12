@@ -1,4 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
+import {Epd} from '../class/patient';
 
 @Component({
   selector: 'app-region-description',
@@ -8,7 +9,11 @@ import {Component, OnInit, Input} from '@angular/core';
 export class RegionDescriptionComponent implements OnInit {
 
   @Input() epd;
-  constructor() { }
+  epdBeschreibung= 'Einrichtungsübergreifende Elektronische patientenakten (eEPA) sollten von Beginn an als....endungen für patienten';
+  epdTitle= 'E.patientenakte';
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

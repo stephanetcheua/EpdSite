@@ -1,18 +1,11 @@
 
-export class Address {
-  title: string;
-  strasse: string;
-  plz: string;
-  stadt: string;
-  telefon: string;
-}
-
 export class Photos {
   url: string;
   urlMobile: string;
 }
 
 export class Medikamente {
+  id: string;
   title: string;
   menge: string;
   form: string;
@@ -24,6 +17,7 @@ export class Medikamente {
 }
 
 export class Team {
+  id: string;
   title: string;
   beschreibung: string;
   name: string;
@@ -63,6 +57,7 @@ export class Zugriffsprotokoll {
 }
 
 export class Vitalzeichen {
+  id: string;
   datum: string;
   systolisch: string;
   diastolisch: string;

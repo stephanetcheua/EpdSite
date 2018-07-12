@@ -20,4 +20,7 @@ export class PatientVitalparameterComponent implements OnInit {
       return 'col-sm-6 wow fadeInUp';
     }
 }
+
+  loadVitalzeichenToEdit(zeichen: Vitalzeichen) {}
+  deleteVitalzeichen(zeichen: Vitalzeichen) {}
 }

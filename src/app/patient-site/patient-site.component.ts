@@ -17,6 +17,7 @@ import {EpdService} from '../services/epd.service';
 })
 export class PatientSiteComponent implements OnInit {
   patient: Patient;
+  patienten: Patient;
   epd: Epd;
   urlsmall: boolean;
   subscription: Subscription;
@@ -33,8 +34,8 @@ export class PatientSiteComponent implements OnInit {
         this.epddataService.getPatient(id).subscribe(content => {
           this.patient = content;
         });
-        this.epddataService.getEpd().subscribe(epd => {
-          this.epd = epd;
+        this.epddataService.getPatienten().subscribe(patient => {
+          this.patienten = patient;
           if (isPlatformBrowser(this.platformId)) {
             var jQuery = (<any>window).jQuery;
             jQuery(document).ready(() => {
@@ -57,12 +58,11 @@ export class PatientSiteComponent implements OnInit {
 
 
   getBackground(id: string): string {
-    // return 'url(assets/wetzlar/Hintergrund_unscharf.jpg)'
     const url = '';
     if (this.urlsmall) {
-      return 'url(' + this.epd.hintergrundbilder[id].urlMobile + ')';
+      return 'url(assets/medical/doctor2.jpg)';
     } else {
-      return 'url(' + this.epd.hintergrundbilder[id].url + ')';
+      return 'url(assets/medical/doctor2.jpg)';
     }
 
   }

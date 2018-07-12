@@ -11,11 +11,11 @@ import {EpdService} from "../services/epd.service";
 
 })
 export class RegionFooterComponent implements OnInit {
-  @Input() epd : Epd;
-  navRoutes:Patient;
+  @Input() patient;
+  navRoutes: Patient;
   errorMsg;
 
-  constructor(private _epddataService:EpdService) { }
+  constructor(private _epddataService: EpdService) { }
 
   ngOnInit() {
     // this._epddataService.getPatient("EPD")
