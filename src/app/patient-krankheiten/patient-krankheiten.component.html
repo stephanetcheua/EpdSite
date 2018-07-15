@@ -1,11 +1,11 @@
 <div class="row">
   <strong>Krankheiten</strong>
-  <div  col-md-6 wow data-wow-delay="0.3s">
+  <div *ngFor="let diagn of diagnose" col-md-6 wow data-wow-delay="0.3s">
     <div class="thumb-pad2-1 col-sm-4 ">
       <div class="thumbnail">
         <div class="caption">
           <strong>Hauptdiagnose</strong>
-          <p>{{krankheiten.hauptdiagnose}}</p>
+          <p>{{diagn.hauptdiagnose}}</p>
         </div>
       </div>
     </div>
@@ -13,7 +13,7 @@
       <div class="thumbnail">
         <div class="caption">
           <strong>Nebendiagnose</strong>
-          <p>{{krankheiten.nebendiagnose}}</p>
+          <p>{{diagn.nebendiagnose}}</p>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <div class="thumbnail">
         <div class="caption">
           <strong>Besonderheiten</strong>
-          <p>{{krankheiten.besonderheiten}}</p>
+          <p>{{diagn.besonderheiten}}</p>
         </div>
       </div>
     </div>

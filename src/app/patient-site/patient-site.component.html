@@ -3,7 +3,7 @@
   <app-patient-header
     [logo]="patient"> </app-patient-header>
   <div class="thumb-box2" id="ueberuns">
-    <p class="title fadeInUp">{{patient.title}}</p>
+    <p class="title fadeInUp">{{patient.name}}</p>
   </div>
   <div class="thumb-box3">
     <div class="container">
@@ -16,7 +16,7 @@
   <div class="thumb-box3" id="vitalparameter">
     <div class="container">
       <app-patient-vitalparameter
-        [vitalzeichen]="patient.vitalparameter"></app-patient-vitalparameter>
+        [vitalzeichen]="vitalparameter"></app-patient-vitalparameter>
     </div>
   </div>
 
@@ -29,7 +29,7 @@
   <div class="thumb-box3" id="erkrankungen">
     <div class="container">
       <app-patient-krankheiten
-        [krankheiten]="patient.erkrankungen">
+        [diagnose]="diagnose">
       </app-patient-krankheiten>
     </div>
   </div>
@@ -44,7 +44,7 @@
   <div class="thumb-box3" id="medikament">
     <div class="container">
       <app-patient-medikament-list
-        [medikament]="patient.medikamente"></app-patient-medikament-list>
+        [medikament]="medikamente"></app-patient-medikament-list>
     </div>
   </div>
 
@@ -58,7 +58,7 @@
   <div class="thumb-box3" id="zugriffprotokoll">
     <div class="container">
       <app-patient-zugriffsprotokoll
-        [protokoll]="patient.zugriffsprotokoll">
+        [protokoll]="protokoll">
       </app-patient-zugriffsprotokoll>
     </div>
   </div>

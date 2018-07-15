@@ -8,13 +8,13 @@
   <!--</div>-->
  <div classs="col-md-6 wow fadeInUp col-md-offset-3">
   <div class="col-sm-4">
-    <h4 style="color: #4cae4c">Name:<a style="color: #4cae4c">{{patient.title}}</a></h4>
+    <h4 style="color: #4cae4c">Name:<a style="color: #4cae4c">{{patient.name}}</a></h4>
     <h4 style="color: #4cae4c">Fallnummer:<a style="color: #4cae4c"> {{patient.fallnr}}</a></h4>
     <h4 style="color: #4cae4c">Krankenkasse:<a style="color: #4cae4c"> {{patient.krankenkasse}}</a></h4>
 
   </div>
   <div class="col-sm-4">
-    <h4 style="color: #4cae4c">Beh.Arzt:<a style="color: #4cae4c"> {{patient.careTeam[0].title}}</a></h4>
+    <!--<h4 style="color: #4cae4c">Beh.Arzt:<a style="color: #4cae4c"> {{patient.careTeam[0].title}}</a></h4>-->
     <h4 style="color: #4cae4c">Aufnahme:<a style="color: #4cae4c"> {{patient.aufnahmeDatum}}</a></h4>
     <h4 style="color: #4cae4c">Entlassung:<a style="color: #4cae4c"> {{patient.entlassungDatum}}</a></h4>
   </div>
@@ -22,12 +22,16 @@
     <h4 style="color: #4cae4c">Geschlecht:<a style="color: #4cae4c"> {{patient.geschlecht}}</a></h4>
     <h4 style="color: #4cae4c">GebDatum: <a style="color: #4cae4c">{{patient.gebDatum}}</a></h4>
   </div>
+   <div class="text-center">
+     <button type="submit" class="btn btn-primary" (click)="onNew()" >New</button>
+   </div>
 </div>
+  <div *ngIf="showNew">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name"
            required
-           [(ngModel)]="patient.title" name="name">
+           [(ngModel)]="patient.name" name="name">
   </div>
 
   <div class="form-group">
@@ -36,12 +40,14 @@
            [(ngModel)]="patient.krankenkasse" name="kasse">
   </div>
 
+  <!--<div class="form-group">-->
+    <!--<label for="team">beh.Artz</label>-->
+    <!--<input type="text"  class="form-control" id="team"-->
+           <!--[(ngModel)]="patient.careTeam[0].title" name="team">-->
+  <!--</div>-->
   <div class="form-group">
-    <label for="team">beh.Artz</label>
-    <input type="text"  class="form-control" id="team"
-           [(ngModel)]="patient.careTeam[0].title" name="team">
+  <button class="btn btn-info" (click)="updateStammdaten()">Save</button>
+    <button  class="btn btn-primary" (click)="onCancel()">Cancel</button>
   </div>
-  <div class="form-group">
-  <button (click)="updateStammdaten()">Submit</button>
   </div>
 </div>

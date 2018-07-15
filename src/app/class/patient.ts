@@ -18,6 +18,7 @@ export class Medikamente {
 
 export class Team {
   id: string;
+  patientenId: string;
   title: string;
   beschreibung: string;
   name: string;
@@ -29,7 +30,6 @@ export class Patient {
   fallnr: string;
   url: string;
   name: string;
-  title: string;
   gebDatum: string;
   geschlecht: string;
   aufnahmeDatum: string;
@@ -39,11 +39,12 @@ export class Patient {
   vitalparameter: Vitalzeichen[];
   medikamente: Medikamente[];
   careTeam: Team[];
-  erkrankungen: Erkrankungen;
+  diagnose: Diagnose;
   zugriffsprotokoll: Zugriffsprotokoll[];
 }
 
-export class Erkrankungen {
+export class Diagnose {
+  patientenId: string;
   title: string;
   hauptdiagnose: string;
   nebendiagnose: string;
@@ -51,6 +52,7 @@ export class Erkrankungen {
 
 }
 export class Zugriffsprotokoll {
+  patientenId: string;
   zeitpunkt: string;
   zugriffvon: string;
   geaenderteDaten: Daten[];
@@ -58,6 +60,7 @@ export class Zugriffsprotokoll {
 
 export class Vitalzeichen {
   id: string;
+  patientenId: string;
   datum: string;
   systolisch: string;
   diastolisch: string;

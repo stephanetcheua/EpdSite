@@ -81,18 +81,18 @@ export class RegionService {
     //       });
     //   });
   }
-  getBackgroundPhoto():Observable<Photos>{
-    var regionId= this._configService._config.regionId;
-    var region = this.processRegion(this._dataService.GetRegion(regionId));
-    var hintergrundbild = region.hintergrundbilder;
-    return Observable.create((observer) => {
-      observer.next(hintergrundbild);
+  // getBackgroundPhoto():Observable<Photos>{
+  //   var regionId= this._configService._config.regionId;
+  //   var region = this.processRegion(this._dataService.GetRegion(regionId));
+  //   var hintergrundbild = region.hintergrundbilder;
+  //   return Observable.create((observer) => {
+  //     observer.next(hintergrundbild);
+  //
+  //   });
+  // }
 
-    });
-  }
 
-
-//ToDo: return type ändern
+// ToDo: return type ändern
   public errorHandler(error: Response) {
     console.error(error);
     // return Observable.throw(error || "Server Error");

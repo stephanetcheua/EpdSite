@@ -5,7 +5,7 @@ import {RegionService} from '../services/region.service';
 import {isBoolean} from 'util';
 import {Casino, Region} from '../class/region';
 import {isPlatformBrowser} from '@angular/common';
-import {Epd, Patient} from '../class/patient';
+import {Diagnose, Epd, Medikamente, Patient, Vitalzeichen, Zugriffsprotokoll} from '../class/patient';
 import {EpdService} from '../services/epd.service';
 
 
@@ -17,7 +17,11 @@ import {EpdService} from '../services/epd.service';
 })
 export class PatientSiteComponent implements OnInit {
   patient: Patient;
+  vitalparameter: Vitalzeichen;
+  diagnose: Diagnose;
+  medikamente: Medikamente;
   patienten: Patient;
+  protokoll: Zugriffsprotokoll;
   epd: Epd;
   urlsmall: boolean;
   subscription: Subscription;
@@ -33,6 +37,21 @@ export class PatientSiteComponent implements OnInit {
         this.patient = null;
         this.epddataService.getPatient(id).subscribe(content => {
           this.patient = content;
+        });
+        this.vitalparameter = null;
+        this.epddataService.getVitalzeichen(id).subscribe(content => {
+          this.vitalparameter = content;
+        });
+        this.diagnose = null;
+        this.epddataService.getDiagnose(id).subscribe(content => {
+          this.diagnose = content;
+        });
+        this.medikamente = null;
+        this.epddataService.getMedikamente(id).subscribe(content => {
+          this.medikamente = content;
+        }); this.protokoll = null;
+        this.epddataService.getzugriffsprotokoll(id).subscribe(content => {
+          this.protokoll = content;
         });
         this.epddataService.getPatienten().subscribe(patient => {
           this.patienten = patient;

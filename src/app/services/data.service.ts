@@ -5,7 +5,7 @@ import {REGIONS} from '../../api/data/regions/region';
 import {Region} from '../class/region';
 import * as Collections from 'typescript-collections';
 import {Epd} from '../class/patient';
-import {EPD} from '../../api/data/patient/patient';
+// import {EPD} from '../../api/data/patient/patient';
 @Injectable()
 export class DataService {
 
@@ -27,10 +27,10 @@ export class DataService {
   }
 
 
-  GetEPD(epdId): Epd {
-    const epd = EPD.find(x => x.id === epdId);
-    return epd;
-  }
+  // GetEPD(epdId): Epd {
+  //   const epd = EPD.find(x => x.id === epdId);
+  //   return epd;
+  // }
 
     GetRegion(regionId: string): Region {
     const region = REGIONS.find(x => x.id === regionId);

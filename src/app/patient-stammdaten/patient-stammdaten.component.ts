@@ -10,6 +10,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class PatientStammdatenComponent implements OnInit {
   @Input() patient;
+  showNew: Boolean = false;
   selectedPatient: Patient;
   constructor(private epddataService: EpdService) { }
 
@@ -20,6 +21,7 @@ export class PatientStammdatenComponent implements OnInit {
     this.epddataService.updatePatient(this.patient);
   }
   updateStammdaten() {
+    this.showNew = true;
     this.epddataService.updatePatient(this.patient).subscribe(
       data => {
         // refresh the list
@@ -31,6 +33,12 @@ export class PatientStammdatenComponent implements OnInit {
         return Observable.throw(error);
       }
     );
+  }
+  onCancel() {
+    this.showNew = false;
+  }
+  onNew() {
+    this.showNew = true;
   }
   save(patient: Patient): void {
    // this.epddataService.updateStammdaten(this.patient);

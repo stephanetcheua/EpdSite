@@ -66,12 +66,12 @@ export class EpdSiteComponent implements OnInit {
     }
   }
 
-  getBackgroundPhoto(id: string): any {
-    this.subscription = this.route.params
-      .subscribe(params => {
-        this.epddataService.getBackgroundPhoto().subscribe(bilder => this.bilder = bilder);
-      });
-  }
+  // getBackgroundPhoto(id: string): any {
+  //   this.subscription = this.route.params
+  //     .subscribe(params => {
+  //       this.epddataService.getBackgroundPhoto().subscribe(bilder => this.bilder = bilder);
+  //     });
+  // }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();

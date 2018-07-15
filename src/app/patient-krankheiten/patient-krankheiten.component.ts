@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Erkrankungen} from '../class/patient';
+import {Diagnose} from '../class/patient';
 
 @Component({
   selector: 'app-patient-krankheiten',
@@ -7,14 +7,14 @@ import {Erkrankungen} from '../class/patient';
   styleUrls: ['./patient-krankheiten.component.css']
 })
 export class PatientKrankheitenComponent implements OnInit {
-  @Input() krankheiten = Erkrankungen;
+  @Input() diagnose = Diagnose;
   constructor() {
   }
 
   ngOnInit() {
   }
   getcontentcenter() {
-    if (this.krankheiten.length === 1) {
+    if (this.diagnose.length === 1) {
       return 'col-md-6 wow fadeInUp col-md-offset-3';
     } else {
       return 'col-sm-6 wow fadeInUp';
