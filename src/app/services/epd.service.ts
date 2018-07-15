@@ -55,8 +55,22 @@ export class EpdService {
         catchError(this.handleError)
       );
   }
+  getAllVitalzeichen(): Observable<Vitalzeichen[]> {
+    return this.http.get<Vitalzeichen[]>(this.vitalparameterUrl)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
   getVitalzeichenbyId(id: string): Observable<Vitalzeichen> {
     return this.http.get<Vitalzeichen>(this.vitalparameterUrl + '/' + id)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  createVitalzeichen(zeichnen: Vitalzeichen): Observable<Vitalzeichen> {
+    const body = JSON.parse(JSON.stringify(zeichnen));
+    return this.http.post<Vitalzeichen>
+    (this.vitalparameterUrl , body, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );
@@ -65,6 +79,12 @@ export class EpdService {
     const body = JSON.parse(JSON.stringify(zeichnen));
     return this.http.put<Vitalzeichen>
     (this.vitalparameterUrl + '/' + zeichnen.id, body, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  deleteVitalzeichen(vtzeichnenId: string): Observable<Vitalzeichen> {
+    return this.http.delete(this.vitalparameterUrl + '/' + vtzeichnenId)
       .pipe(
         catchError(this.handleError)
       );

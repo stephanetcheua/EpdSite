@@ -1,6 +1,6 @@
 <div class="row">
   <strong>Vitalparameter</strong>
-  <div *ngIf="vitalzeichen"  class="col-md-6  fadeInUp col-md-offset-3" data-wow-delay="0.3s">
+  <div *ngIf="vitalzeichen"  class="col-sm-6  fadeInUp col-md-offset-3" data-wow-delay="0.3s">
     <table class="table" class="table table-striped">
       <thead>
       <tr>
@@ -23,7 +23,7 @@
         <td>{{zeichen.temperatur}}</td>
         <td>{{zeichen.zucker}}</td>
         <td><button type="button" class="btn btn-info" (click)="loadVitalzeichenToEdit(i)">Edit</button> </td>
-        <td><button type="button" class="btn btn-danger" (click)="deleteVitalzeichen(zeichen)">Delete</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteVitalzeichen(i)">Delete</button></td>
       </tr>
       </tbody>
     </table>
@@ -32,24 +32,25 @@
     </div>
     <br>
   </div>
-  <div class="updateitem"  *ngIf="showNew" >
-    <form (ngSubmit)="onSave()">
+  <div class="updateitem"  *ngIf="showNew"  >
+    <br>
+    <form [formGroup]="vitalparamForm" (ngSubmit)="onSave()" >
       <div class="form-group row">
-        <label for="puls-input" class="col-2 col-form-label">Puls</label>
-        <div class="col-10">
-          <input class="form-control" type="text" [(ngModel)]="zeichen.puls" name="puls">
+        <label for="puls-input" class="col-sm-2 col-form-label">Puls</label>
+        <div class="col-sm-10">
+          <input class="form-control" formControlName="puls"  type="text"  [(ngModel)]="zeichen.puls" name="puls">
         </div>
       </div>
       <div class="form-group row">
-        <label for="systolisch-input" class="col-2 col-form-label">Systolisch</label>
-        <div class="col-10">
-          <input class="form-control" type="text" [(ngModel)]="zeichen.systolisch" name="systolisch">
+        <label for="systolisch-input" class="col-sm-2 col-form-label">Systolisch</label>
+        <div class="col-sm-10">
+          <input class="form-control" formControlName="systolisch"  type="text" [(ngModel)]="zeichen.systolisch" name="systolisch">
         </div>
       </div>
       <div class="form-group row">
-        <label for="diastolisch-input" class="col-2 col-form-label">Diastolisch</label>
-        <div class="col-10">
-          <input class="form-control" type="text" [(ngModel)]="zeichen.diastolisch" name="diastolisch">
+        <label for="diastolisch-input" class="col-sm-2 col-form-label">Diastolisch</label>
+        <div class="col-sm-10">
+          <input class="form-control" formControlName="diastolisch"  type="text" [(ngModel)]="zeichen.diastolisch" name="diastolisch">
         </div>
       </div>
       <!--<input class="form-control" type="hidden" [(ngModel)]="zeichen.diastolisch" name="diastolisch">-->
