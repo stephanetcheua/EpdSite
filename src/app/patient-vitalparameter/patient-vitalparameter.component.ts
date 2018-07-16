@@ -17,6 +17,10 @@ export class PatientVitalparameterComponent implements OnInit {
   zeichen: Vitalzeichen;
   newzeichen: Vitalzeichen[];
   showNew: Boolean = false;
+  isAdmin: Boolean = false;
+  isPflege: Boolean = false;
+  isVisitor: Boolean = false;
+  angemUser: any;
   // It maintains table row index based on selection.
   selectedRow: number;
   // It will be either 'Save' or 'Update' based on operation.
@@ -26,23 +30,51 @@ export class PatientVitalparameterComponent implements OnInit {
   vitalparamForm = new FormGroup({
     puls: new FormControl('', Validators.required),
     systolisch: new FormControl('', Validators.required),
-    diastolisch: new FormControl('', Validators.required)
+    diastolisch: new FormControl('', Validators.required),
+    temperatur: new FormControl('', Validators.required),
+    zucker: new FormControl('', Validators.required),
   });
   constructor(private epdService: EpdService, private fb: FormBuilder,
               private route: ActivatedRoute) {
-    // this.postForm = fb.group({
-    //   puls: fb.control('initial value'),
-    //   systolisch: fb.control('initial value'),
-    //   diastolisch: fb.control('initial value'),
-    // });
   }
 
   ngOnInit() {
-    // this.postForm.reset({
-    //   puls: 'new value',
-    //   systolisch: 'new value',
-    //   diastolisch: 'new value',
-    // });
+    this.subscription = this.route.params
+      .subscribe(params => {
+        const kuerzel = (params['kuerzel'] || '');
+        const patId = (params['id'] || '');
+        this.epdService.getcareTeam(patId).subscribe(
+          content => {
+            const team = content;
+            for (const i in team) {
+              const user = team[i].kuerzel;
+              if (user === kuerzel) {
+                this.angemUser = kuerzel;
+                const role = team[i].role;
+                switch (role) {
+                  case 'admin': {
+                    this.isAdmin = true;
+                    break;
+                  }
+                  case 'pflege': {
+                    this.isPflege = true;
+                    break;
+                  }
+                  case 'visitor': {
+                    this.isVisitor = true;
+                    break;
+                  }
+                }
+              }
+            }
+            return true;
+          },
+          error => {
+            console.error('Error updating vitalzeichnen Patient!');
+            return Observable.throw(error);
+          }
+        );
+      });
   }
   getcontentcenter() {
     if (this.vitalzeichen.length === 1) {
@@ -53,6 +85,8 @@ export class PatientVitalparameterComponent implements OnInit {
 }
   onSave() {
     if (this.submitType === 'Update') {
+      this.zeichen.lastModifiedDate = this.formatted_date();
+      this.zeichen.bearbeiter = this.angemUser;
       this.epdService.updateVitalzeichen(this.zeichen).subscribe(
         data => {
           return true;
@@ -77,7 +111,7 @@ export class PatientVitalparameterComponent implements OnInit {
         .subscribe(params => {
           const id = (params['id'] || '');
           const vitalzeichnen = this.vitalparamForm.value;
-          this.zeichen = null;
+          // this.zeichen = null;
           this.epdService.getAllVitalzeichen().subscribe(content => {
             const maxIndex = content.length - 1;
             const articleWithMaxIndex = content[maxIndex];
@@ -85,9 +119,10 @@ export class PatientVitalparameterComponent implements OnInit {
             const articleId = (Number.parseInt(articleWithMaxIndexId) + 1);
             vitalzeichnen.id = articleId;
             vitalzeichnen.patientenId = id;
-            vitalzeichnen.temperatur = '10°C';
-            vitalzeichnen.zucker = '10°C';
-            vitalzeichnen.datum = this.formatted_date();
+            vitalzeichnen.bearbeiter = this.angemUser;
+            vitalzeichnen.ersteller = this.angemUser;
+            vitalzeichnen.createdDate = this.formatted_date();
+            vitalzeichnen.lastModifiedDate = this.formatted_date();
             this.epdService.createVitalzeichen(vitalzeichnen).subscribe(
               data => {
                 return true;
@@ -109,9 +144,8 @@ export class PatientVitalparameterComponent implements OnInit {
    formatted_date() {
     let result = '';
     const d = new Date();
-    result += d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() +
-      ' ' + d.getHours() + ':' + d.getMinutes() + ':' +
-    d.getSeconds() + ' ' + d.getMilliseconds();
+    result += d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDate() +
+      ' ' + d.getHours() + ':' + d.getMinutes();
     return result;
   }
   onCancel() {
@@ -120,7 +154,8 @@ export class PatientVitalparameterComponent implements OnInit {
   // This method associate to New Button.
   onNew() {
     this.zeichen = this.vitalzeichen[0];
-    this.vitalparamForm.setValue({ puls: this.zeichen.puls, systolisch: this.zeichen.systolisch, diastolisch: this.zeichen.diastolisch });
+    this.vitalparamForm.setValue({ puls: this.zeichen.puls, systolisch: this.zeichen.systolisch,
+      diastolisch: this.zeichen.diastolisch, temperatur: this.zeichen.temperatur, zucker: this.zeichen.zucker});
 // Change submitType to 'Save'.
     this.submitType = 'Save';
 // display registration entry section.

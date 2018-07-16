@@ -11,15 +11,16 @@ export class Medikamente {
   form: string;
   start: string;
   ende: string;
-  erstellungsdatum: string;
-  modifierungsdatum: string;
-  erstellerkuerzel: string;
+  createdDate: string;
+  lastModifiedDate: string;
+  ersteller: string;
+  bearbeiter: string;
 }
 
 export class Team {
   id: string;
   patientenId: string;
-  title: string;
+  kuerzel: string;
   beschreibung: string;
   name: string;
   role: string;
@@ -61,12 +62,15 @@ export class Zugriffsprotokoll {
 export class Vitalzeichen {
   id: string;
   patientenId: string;
-  datum: string;
+  createdDate: string;
+  lastModifiedDate: string;
   systolisch: string;
   diastolisch: string;
   puls: string;
   temperatur: string;
   zucker: string;
+  ersteller: string;
+  bearbeiter: string;
 }
 export class Daten {
   title: string;
