@@ -22,40 +22,42 @@
         <td>{{zeichen.puls}}</td>
         <td>{{zeichen.temperatur}}</td>
         <td>{{zeichen.zucker}}</td>
-        <td><button type="button" class="btn btn-info" (click)="loadVitalzeichenToEdit(i)">Edit</button> </td>
-        <td><button type="button" class="btn btn-danger" (click)="deleteVitalzeichen(i)">Delete</button></td>
+        <td><button  class="glyphicon glyphicon-pencil btn bg-success" (click)="loadVitalzeichenToEdit(i)"></button> </td>
+        <td><button  class="glyphicon glyphicon-trash btn btn-danger" (click)="deleteVitalzeichen(i)"></button></td>
       </tr>
       </tbody>
     </table>
-    <div class="text-center">
-      <button type="submit" class="btn btn-primary" (click)="onNew()" >New</button>
+    <div class="text-left">
+      <button type="submit" class="glyphicon glyphicon-plus btn btn-primary" (click)="onNew()" ></button>
     </div>
     <br>
   </div>
-  <div class="updateitem"  *ngIf="showNew"  >
+  <div class="col-sm-6 col-md-offset-3 "  *ngIf="showNew"  >
     <br>
     <form [formGroup]="vitalparamForm" (ngSubmit)="onSave()" >
       <div class="form-group row">
         <label for="puls-input" class="col-sm-2 col-form-label">Puls</label>
-        <div class="col-sm-10">
+        <div class="col-sm-4">
           <input class="form-control" formControlName="puls"  type="text"  [(ngModel)]="zeichen.puls" name="puls">
         </div>
       </div>
       <div class="form-group row">
         <label for="systolisch-input" class="col-sm-2 col-form-label">Systolisch</label>
-        <div class="col-sm-10">
+        <div class="col-sm-4">
           <input class="form-control" formControlName="systolisch"  type="text" [(ngModel)]="zeichen.systolisch" name="systolisch">
         </div>
       </div>
       <div class="form-group row">
         <label for="diastolisch-input" class="col-sm-2 col-form-label">Diastolisch</label>
-        <div class="col-sm-10">
+        <div class="col-sm-4">
           <input class="form-control" formControlName="diastolisch"  type="text" [(ngModel)]="zeichen.diastolisch" name="diastolisch">
         </div>
       </div>
+      <div class="col-sm-4 text-left">
       <!--<input class="form-control" type="hidden" [(ngModel)]="zeichen.diastolisch" name="diastolisch">-->
-      <button type="submit"  class="btn btn-success">{{submitType}}</button>
+      <button type="submit"  class="btn btn-success">{{submitType}}</button>|
       <button type="submit" class="btn btn-primary" (click)="onCancel()">Cancel</button>
+      </div>
     </form>
   </div>
   <div>

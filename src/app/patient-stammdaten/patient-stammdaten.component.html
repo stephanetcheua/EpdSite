@@ -6,7 +6,7 @@
       <!--<button (click)="save(patient)">save</button>-->
     <!--</label>-->
   <!--</div>-->
- <div classs="col-md-6 wow fadeInUp col-md-offset-3">
+ <div classs="col-md-6  fadeInUp col-md-offset-3">
   <div class="col-sm-4">
     <h4 style="color: #4cae4c">Name:<a style="color: #4cae4c">{{patient.name}}</a></h4>
     <h4 style="color: #4cae4c">Fallnummer:<a style="color: #4cae4c"> {{patient.fallnr}}</a></h4>
@@ -22,11 +22,11 @@
     <h4 style="color: #4cae4c">Geschlecht:<a style="color: #4cae4c"> {{patient.geschlecht}}</a></h4>
     <h4 style="color: #4cae4c">GebDatum: <a style="color: #4cae4c">{{patient.gebDatum}}</a></h4>
   </div>
-   <div class="text-center">
-     <button type="submit" class="btn btn-primary" (click)="onNew()" >New</button>
+   <div class="text-left">
+     <button type="submit" class=" glyphicon glyphicon-pencil btn bg-success" (click)="onNew()" ></button>
    </div>
 </div>
-  <div *ngIf="showNew">
+  <div class="col-lg-4" *ngIf="showNew">
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name"
@@ -46,7 +46,7 @@
            <!--[(ngModel)]="patient.careTeam[0].title" name="team">-->
   <!--</div>-->
   <div class="form-group">
-  <button class="btn btn-info" (click)="updateStammdaten()">Save</button>
+  <button class="btn btn-success" (click)="updateStammdaten()">Save</button>
     <button  class="btn btn-primary" (click)="onCancel()">Cancel</button>
   </div>
   </div>
