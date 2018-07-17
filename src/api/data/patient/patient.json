@@ -54,7 +54,7 @@
       "id": "1",
       "patientenId": "1",
       "createdDate": "29.06.2018",
-      "lastModifiedDate": "2018.7.16 19:5",
+      "lastModifiedDate": "2018.7.17 22:27",
       "ersteller": "hsa",
       "bearbeiter": "hsa",
       "diastolisch": "90",
@@ -67,9 +67,9 @@
       "id": "2",
       "patientenId": "1",
       "createdDate": "30.06.2018",
-      "lastModifiedDate": "2018.7.16 19:6",
+      "lastModifiedDate": "2018.7.17 23:11",
       "ersteller": "hsa",
-      "bearbeiter": "hsa",
+      "bearbeiter": "fpf",
       "diastolisch": "90",
       "systolisch": "120",
       "puls": "85",
@@ -218,19 +218,6 @@
       "lastModifiedDate": "01.01.2018",
       "ersteller": "Sigmund",
       "bearbeiter": "Sigmund"
-    },
-    {
-      "name": "Gripostat",
-      "menge": "200",
-      "form": "kapseln",
-      "id": 5,
-      "patientenId": "1",
-      "bearbeiter": "hsa",
-      "ersteller": "hsa",
-      "createdDate": "2018.7.17 2:18",
-      "lastModifiedDate": "2018.7.17 2:18",
-      "start": "2018.7.17",
-      "ende": "2018.7.17"
     }
   ],
   "zugriffsprotokoll": [

@@ -95,7 +95,7 @@ function handleModuleRef(moduleRef: NgModuleRef<{}>, callback: Send) {
       const bootstrap = moduleRef.instance['ngOnBootstrap'];
       bootstrap && bootstrap();
 
-      callback(null, state.renderToString());
+      callback(state.renderToString());
       moduleRef.destroy();
     });
 }
