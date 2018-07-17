@@ -1,5 +1,5 @@
 
-<div *ngIf="patient">
+<div *ngIf="patient&&isAdmin || patient&&isPflege || patient&&isVisitor">
   <app-patient-header
     [logo]="patient"> </app-patient-header>
   <div class="thumb-box2" id="ueberuns">
@@ -26,14 +26,13 @@
       </div>
     </div>
   </div>
-  <div class="thumb-box3" id="erkrankungen">
+
+  <div class="thumb-box3" id="medikament">
     <div class="container">
-      <app-patient-krankheiten
-        [diagnose]="diagnose">
-      </app-patient-krankheiten>
+      <app-patient-medikament-list
+        [medikamente]="medikamente"></app-patient-medikament-list>
     </div>
   </div>
-
   <div class="stellar-section">
     <div class="thumb-box1" data-stellar-background-ratio="0.5" [ngStyle]="{ 'background-image': getBackground('1')}">
       <div class="container" style="height:50px">
@@ -41,10 +40,11 @@
     </div>
   </div>
 
-  <div class="thumb-box3" id="medikament">
+  <div class="thumb-box3" id="erkrankungen">
     <div class="container">
-      <app-patient-medikament-list
-        [medikament]="medikamente"></app-patient-medikament-list>
+      <app-patient-krankheiten
+        [diagnose]="diagnose">
+      </app-patient-krankheiten>
     </div>
   </div>
 

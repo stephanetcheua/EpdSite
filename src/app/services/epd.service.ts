@@ -13,6 +13,7 @@ export class EpdService {
   // patientUrl = 'http://localhost:3000/Epd';
   patientUrl = 'http://localhost:3000/patienten';
   vitalparameterUrl = 'http://localhost:3000/vitalparameter';
+  medikamenteUrl = 'http://localhost:3000/medikamente';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -97,6 +98,34 @@ export class EpdService {
   }
   getMedikamente(patientId: string): Observable<Medikamente> {
     return this.http.get<Medikamente>(this.patientUrl + '/' + patientId + '/medikamente')
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  getAllMedikamente(): Observable<Medikamente[]> {
+    return this.http.get<Medikamente[]>(this.medikamenteUrl)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  createMedikamente(medikament: Medikamente): Observable<Medikamente> {
+    const body = JSON.parse(JSON.stringify(medikament));
+    return this.http.post<Medikamente>
+    (this.medikamenteUrl , body, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  updateMedikamente(medikament: Medikamente): Observable<Medikamente> {
+    const body = JSON.parse(JSON.stringify(medikament));
+    return this.http.put<Medikamente>
+    (this.medikamenteUrl + '/' + medikament.id, body, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+  deleteMedikamente(mediId: string): Observable<Medikamente> {
+    return this.http.delete(this.medikamenteUrl + '/' + mediId)
       .pipe(
         catchError(this.handleError)
       );

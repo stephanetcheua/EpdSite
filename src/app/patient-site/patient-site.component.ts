@@ -25,7 +25,12 @@ export class PatientSiteComponent implements OnInit {
   epd: Epd;
   urlsmall: boolean;
   subscription: Subscription;
+  // role
+  isAdmin: Boolean = false;
+  isPflege: Boolean = false;
+  isVisitor: Boolean = false;
 
+  angemUser: any;
   constructor(private route: ActivatedRoute, private epddataService: EpdService, @Inject(PLATFORM_ID) private platformId: Object) {
   }
 
@@ -52,6 +57,31 @@ export class PatientSiteComponent implements OnInit {
         }); this.protokoll = null;
         this.epddataService.getzugriffsprotokoll(id).subscribe(content => {
           this.protokoll = content;
+        });
+        const kuerzel = (params['kuerzel'] || '');
+        this.epddataService.getcareTeam(id).subscribe(content => {
+            const team = content;
+            for (const i in team) {
+              const user = team[i].kuerzel;
+              if (user === kuerzel) {
+                this.angemUser = kuerzel;
+                const role = team[i].role;
+                switch (role) {
+                  case 'admin': {
+                    this.isAdmin = true;
+                    break;
+                  }
+                  case 'pflege': {
+                    this.isPflege = true;
+                    break;
+                  }
+                  case 'visitor': {
+                    this.isVisitor = true;
+                    break;
+                  }
+                }
+              }
+            }
         });
         this.epddataService.getPatienten().subscribe(patient => {
           this.patienten = patient;

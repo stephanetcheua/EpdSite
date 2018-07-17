@@ -1,11 +1,36 @@
 <div class="row">
-  <div *ngFor="let patient of patienten" class="col-lg-4 col-md-4 col-sm-4  fadeInUp" data-wow-delay="0.3s">
-    <strong>{{patient.name}} </strong>
-    <p>{{patient.description}}</p>
-    <a  [routerLink]="['/patient',patient.id,patient.fallnr,'']" class="btn-default btn3">Auswählen</a>
-    <!--<a  [routerLink]="['/patient',patient.fallnr,patient.careTeam[0].name]" class="btn-default btn3">Auswählen</a>-->
-    <!--<a  [routerLink]="['/patient',patient.fallnr]" class="btn-default btn3">Auswählen</a>-->
-  </div>
+<strong>Patientenliste</strong>
+<div  class="col-md-6  fadeInUp col-md-offset-3" data-wow-delay="0.3s">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Fallnr</th>
+      <th scope="col">gebDatum</th>
+      <th scope="col">krankenkasse</th>
+      <th scope="col">geschlecht</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let patient of patienten">
+      <td>{{patient.name}}</td>
+      <td>{{patient.fallnr}}</td>
+      <td>{{patient.gebDatum}}</td>
+      <td>{{patient.krankenkasse}}</td>
+      <td>{{patient.geschlecht}}</td>
+      <td> <a  [routerLink]="['/patient',patient.id,patient.fallnr,'hsa']" class="btn-default btn3">Auswählen</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 </div>
 
-
+<!--<div class="row">-->
+<!--<div *ngFor="let patient of patienten" class="col-lg-4 col-md-4 col-sm-4  fadeInUp" data-wow-delay="0.3s">-->
+<!--<strong>{{patient.name}} </strong>-->
+<!--<p>{{patient.description}}</p>-->
+<!--<a  [routerLink]="['/patient',patient.id,patient.fallnr,'']" class="btn-default btn3">Auswählen</a>-->
+<!--&lt;!&ndash;<a  [routerLink]="['/patient',patient.fallnr,patient.careTeam[0].name]" class="btn-default btn3">Auswählen</a>&ndash;&gt;-->
+<!--&lt;!&ndash;<a  [routerLink]="['/patient',patient.fallnr]" class="btn-default btn3">Auswählen</a>&ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->

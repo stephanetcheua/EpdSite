@@ -1,16 +1,54 @@
-<!--<div *ngIf="!patient&&!epd">Unbekannten Patient.</div>-->
-<!--<div *ngIf="patient&&epd">-->
+<div *ngIf="isAdmin">
 <div class="row">
   <strong>Zugriffsprotokoll</strong>
-  <div *ngFor="let result of protokoll" class="col-md-6  fadeInUp col-md-offset-3" data-wow-delay="0.3s">
-    <div class="thumb-pad1">
-      <div class="thumbnail">
-        <div class="caption">
-          <p> Zugrifft von :{{result.zugriffvon}}</p>
-          <p>Zeitpunkt :{{result.zeitpunkt}}</p>
-          <p>geänderte Daten :{{result.geaenderteDaten[0]}}</p>
-        </div>
-      </div>
-    </div>
+  <div  class="col-md-6  fadeInUp col-md-offset-3" data-wow-delay="0.3s">
+    <h2>Medikamente</h2>
+    <table class="table table-bordered table-primary">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Menge</th>
+        <th scope="col">Ersteller</th>
+        <th scope="col">Bearbeiter</th>
+        <th scope="col">ModifiedDate</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let medi of medikamente">
+        <td>{{medi.name}}</td>
+        <td>{{medi.menge}}</td>
+        <td>{{medi.ersteller}}</td>
+        <td>{{medi.bearbeiter}}</td>
+        <td>{{medi.lastModifiedDate}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
+</div>
+
+<div class="row">
+  <div  class="col-md-6  fadeInUp col-md-offset-3" data-wow-delay="0.3s">
+    <h2>Vitalparameter</h2>
+    <table class="table table-bordered table-primary">
+      <thead>
+      <tr>
+        <th scope="col">Systolisch</th>
+        <th scope="col">Diastolisch</th>
+        <th scope="col">Ersteller</th>
+        <th scope="col">bearbeiter</th>
+        <th scope="col">ModifiedDate</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let param of vitalparameter">
+        <td>{{param.systolisch}}</td>
+        <td>{{param.diastolisch}}</td>
+        <td>{{param.ersteller}}</td>
+        <td>{{param.bearbeiter}}</td>
+        <td>{{param.lastModifiedDate}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 </div>

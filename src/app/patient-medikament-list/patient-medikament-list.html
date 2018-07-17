@@ -1,25 +1,62 @@
 <div class="row">
   <strong>Medikamente</strong>
-  <div  class="col-md-6  fadeInUp col-md-offset-3" data-wow-delay="0.3s">
-  <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Menge</th>
-      <th scope="col">Form</th>
-      <th scope="col">Start</th>
-      <th scope="col">Ende</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let medi of medikament">
-      <td>{{medi.title}}</td>
-      <td>{{medi.menge}}</td>
-      <td>{{medi.form}}</td>
-      <td>{{medi.start}}</td>
-      <td>{{medi.ende}}</td>
-    </tr>
-    </tbody>
-  </table>
+  <div *ngIf="medikamente"  class="col-sm-6  fadeInUp col-md-offset-3" data-wow-delay="0.3s">
+    <table  class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Menge</th>
+        <th scope="col">Form</th>
+        <th scope="col">Bearbeiter</th>
+        <th scope="col">MofiDatum</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let medi of medikamente; let i = index">
+        <td >{{medi.name}}</td>
+        <td>{{medi.menge}} mg</td>
+        <td>{{medi.form}}</td>
+        <td>{{medi.bearbeiter}}</td>
+        <td>{{medi.lastModifiedDate}}</td>
+        <td><button *ngIf="isAdmin || isPflege" class="glyphicon glyphicon-pencil btn bg-success" (click)="loadMedikamentToEdit(i)"></button> </td>
+        <td><button *ngIf="isAdmin" class="glyphicon glyphicon-trash btn btn-danger" (click)="deleteMedikament(i)"></button></td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="text-left">
+      <button *ngIf="isAdmin || isPflege" type="submit" class="glyphicon glyphicon-plus btn btn-primary" (click)="onNew()" ></button>
+    </div>
+    <br>
+  </div>
+  <div class="col-sm-6 col-md-offset-3 "  *ngIf="showNew"  >
+    <br>
+    <form [formGroup]="medikamentForm" (ngSubmit)="onSave()">
+      <div class="form-group row">
+        <label for="name-input" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-4">
+          <input class="form-control" formControlName="name"  type="text"  [(ngModel)]="medikament.name" name="name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="menge-input" class="col-sm-2 col-form-label">Menge</label>
+        <div class="col-sm-4">
+          <input class="form-control" formControlName="menge"  type="text" [(ngModel)]="medikament.menge" name="menge">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="form-input" class="col-sm-2 col-form-label">Form</label>
+        <div class="col-sm-4">
+          <input class="form-control" formControlName="form"  type="text" [(ngModel)]="medikament.form" name="form">
+        </div>
+      </div>
+      <div class="col-sm-4 text-left">
+        <button type="submit"  class="btn btn-success">{{submitType}}</button>|
+        <button type="submit" class="btn btn-primary" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div>
   </div>
 </div>

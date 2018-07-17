@@ -80,15 +80,16 @@
     },
     {
       "puls": "86",
-      "systolisch": "125",
-      "diastolisch": "90",
-      "temperatur": "33",
-      "zucker": "150",
+      "systolisch": "128",
+      "diastolisch": "87",
+      "temperatur": "35",
+      "zucker": "90",
       "id": 5,
       "patientenId": "1",
-      "erstellerkuerzel": "hsa",
-      "createdDate": "2018.7.16 18:48",
-      "lastModifiedDate": "2018.7.16 18:48"
+      "bearbeiter": "hsa",
+      "ersteller": "hsa",
+      "createdDate": "2018.7.16 22:55",
+      "lastModifiedDate": "2018.7.16 22:55"
     }
   ],
   "careTeam": [
@@ -129,34 +130,34 @@
     {
       "id": "1",
       "patientenId": "1",
-      "title": "Aspirine",
-      "menge": "200mg",
+      "name": "Aspirine",
+      "menge": "200",
       "form": "kapseln",
       "start": "12.06.2018",
       "ende": "12.06.2018",
       "createdDate": "01.01.2018",
-      "lastModifiedDate": "01.01.2018",
+      "lastModifiedDate": "2018.7.17 2:10",
       "ersteller": "Hans",
-      "bearbeiter": "Hans"
+      "bearbeiter": "hsa"
     },
     {
       "id": "2",
       "patientenId": "1",
-      "title": "Voltaren",
-      "menge": "200mg",
+      "name": "Voltaren",
+      "menge": "200",
       "form": "kapseln",
       "start": "12.06.2018",
       "ende": "12.06.2018",
       "createdDate": "01.01.2018",
-      "lastModifiedDate": "01.01.2018",
+      "lastModifiedDate": "2018.7.17 2:44",
       "ersteller": "Hans",
-      "bearbeiter": "Hans"
+      "bearbeiter": "hsa"
     },
     {
       "id": "3",
       "patientenId": "2",
-      "title": "52Wochen",
-      "menge": "200mg",
+      "name": "52Wochen",
+      "menge": "200",
       "form": "kapseln",
       "start": "12.06.2018",
       "ende": "12.06.2018",
@@ -168,8 +169,8 @@
     {
       "id": "4",
       "patientenId": "2",
-      "title": "Acetylsalicylsäure",
-      "menge": "500 mg",
+      "name": "Aspirin",
+      "menge": "500",
       "form": "kapseln",
       "start": "12.06.2018",
       "ende": "12.06.2018",
@@ -177,6 +178,19 @@
       "lastModifiedDate": "01.01.2018",
       "ersteller": "Sigmund",
       "bearbeiter": "Sigmund"
+    },
+    {
+      "name": "Gripostat",
+      "menge": "200",
+      "form": "kapseln",
+      "id": 5,
+      "patientenId": "1",
+      "bearbeiter": "hsa",
+      "ersteller": "hsa",
+      "createdDate": "2018.7.17 2:18",
+      "lastModifiedDate": "2018.7.17 2:18",
+      "start": "2018.7.17",
+      "ende": "2018.7.17"
     }
   ],
   "zugriffsprotokoll": [

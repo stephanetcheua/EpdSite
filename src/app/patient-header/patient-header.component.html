@@ -7,11 +7,12 @@
           <ul class="nav sf-menu clearfix">
             <li><a pageScroll href="#vitalparameter">Vitalzeichen</a></li>
             <li><a pageScroll href="#medikament">Medikamente</a></li>
-            <li><a pageScroll href="#erkrankungen">Krankheiten</a></li>
-            <li><a pageScroll href="#zugriffprotokoll">Protokoll</a></li>
+            <li><a pageScroll href="#erkrankungen">Diagnose</a></li>
+            <li *ngIf="isAdmin"><a pageScroll href="#zugriffprotokoll">Protokoll</a></li>
           </ul>
         </nav>
       </div>
+      <div ><h5 style="align-content: left">angemeldete Benutzer: {{angemUser}}</h5></div>
     </div>
   </div>
 </header>

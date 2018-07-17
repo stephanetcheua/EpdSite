@@ -15,7 +15,6 @@ export class PatientVitalparameterComponent implements OnInit {
 
   @Input() vitalzeichen = Vitalzeichen;
   zeichen: Vitalzeichen;
-  newzeichen: Vitalzeichen[];
   showNew: Boolean = false;
   isAdmin: Boolean = false;
   isPflege: Boolean = false;
@@ -85,7 +84,7 @@ export class PatientVitalparameterComponent implements OnInit {
 }
   onSave() {
     if (this.submitType === 'Update') {
-      this.zeichen.lastModifiedDate = this.formatted_date();
+      this.zeichen.lastModifiedDate = this.formatted_dateYMDHM();
       this.zeichen.bearbeiter = this.angemUser;
       this.epdService.updateVitalzeichen(this.zeichen).subscribe(
         data => {
@@ -114,21 +113,21 @@ export class PatientVitalparameterComponent implements OnInit {
           // this.zeichen = null;
           this.epdService.getAllVitalzeichen().subscribe(content => {
             const maxIndex = content.length - 1;
-            const articleWithMaxIndex = content[maxIndex];
-            const articleWithMaxIndexId = articleWithMaxIndex.id;
-            const articleId = (Number.parseInt(articleWithMaxIndexId) + 1);
-            vitalzeichnen.id = articleId;
+            const parameterWithMaxIndex = content[maxIndex];
+            const parameterWithMaxIndexId = parameterWithMaxIndex.id;
+            const parameterId = (Number.parseInt(parameterWithMaxIndexId) + 1);
+            vitalzeichnen.id = parameterId;
             vitalzeichnen.patientenId = id;
             vitalzeichnen.bearbeiter = this.angemUser;
             vitalzeichnen.ersteller = this.angemUser;
-            vitalzeichnen.createdDate = this.formatted_date();
-            vitalzeichnen.lastModifiedDate = this.formatted_date();
+            vitalzeichnen.createdDate = this.formatted_dateYMDHM();
+            vitalzeichnen.lastModifiedDate = this.formatted_dateYMDHM();
             this.epdService.createVitalzeichen(vitalzeichnen).subscribe(
               data => {
                 return true;
               },
               error => {
-                console.error('Error updating vitalzeichnen Patient!');
+                console.error('Error created vitalzeichnen Patient!');
                 return Observable.throw(error);
               }
             );
@@ -137,11 +136,7 @@ export class PatientVitalparameterComponent implements OnInit {
     }
     this.showNew = false;
   }
-  onDelete(index: number) {
-// Delete the corresponding registration entry from the list.
-   // this.registrations.splice(index, 1);
-  }
-   formatted_date() {
+   formatted_dateYMDHM() {
     let result = '';
     const d = new Date();
     result += d.getFullYear() + '.' + (d.getMonth() + 1) + '.' + d.getDate() +

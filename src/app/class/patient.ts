@@ -6,7 +6,8 @@ export class Photos {
 
 export class Medikamente {
   id: string;
-  title: string;
+  patientenId: string;
+  name: string;
   menge: string;
   form: string;
   start: string;
