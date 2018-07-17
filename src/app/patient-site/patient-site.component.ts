@@ -1,9 +1,6 @@
 import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Observable, Subscription} from 'rxjs';
-import {RegionService} from '../services/region.service';
-import {isBoolean} from 'util';
-import {Casino, Region} from '../class/region';
 import {isPlatformBrowser} from '@angular/common';
 import {Diagnose, Epd, Medikamente, Patient, Vitalzeichen, Zugriffsprotokoll} from '../class/patient';
 import {EpdService} from '../services/epd.service';

@@ -152,10 +152,13 @@ export class PatientMedikamentListComponent implements OnInit {
   }
   // This method associate to New Button.
   onNew() {
-    this.medikament = this.medikamente[0];
-    // this.medikamentForm.setValue({ name: this.medikament.name, menge: this.medikament.menge,
-    // form: this.medikament.form});
-    this.medikamentForm.setValue({ name: '', menge: 'mg', form: ''});
+    // this.medikament = this.medikamente[0];
+    this.medikament = new Medikamente();
+    this.medikament.name = ' ';
+    this.medikament.menge = 'mg';
+    this.medikament.form = ' ';
+    this.medikamentForm.setValue({ name: this.medikament.name, menge: this.medikament.menge,
+    form: this.medikament.form});
 // Change submitType to 'Save'.
     this.submitType = 'Save';
 // display registration entry section.

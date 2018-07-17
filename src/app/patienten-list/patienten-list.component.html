@@ -1,10 +1,10 @@
 <div class="row">
 <strong>Patientenliste</strong>
 <div  class="col-md-6  fadeInUp col-md-offset-3" data-wow-delay="0.3s">
-  <table class="table">
+  <table class="table table-bordered">
     <thead>
-    <tr>
-      <th scope="col">Name</th>
+    <tr style="background-color: #4cae4c;color: white">
+      <th  scope="col">Name</th>
       <th scope="col">Fallnr</th>
       <th scope="col">gebDatum</th>
       <th scope="col">krankenkasse</th>
@@ -18,19 +18,12 @@
       <td>{{patient.gebDatum}}</td>
       <td>{{patient.krankenkasse}}</td>
       <td>{{patient.geschlecht}}</td>
-      <td> <a  [routerLink]="['/patient',patient.id,patient.fallnr,'hsa']" class="btn-default btn3">Auswählen</a></td>
+      <td *ngIf="patient.id =='1'"> <a  [routerLink]="['/patient',patient.id,patient.fallnr,'hsa']" class="btn-default btn3">Auswählen</a></td>
+      <td *ngIf="patient.id =='2'"> <a  [routerLink]="['/patient',patient.id,patient.fallnr,'sgm']" class="btn-default btn3">Auswählen</a></td>
+      <td *ngIf="patient.id =='3'"> <a  [routerLink]="['/patient',patient.id,patient.fallnr,'fdl']" class="btn-default btn3">Auswählen</a></td>
+      <td *ngIf="patient.id =='4'"> <a  [routerLink]="['/patient',patient.id,patient.fallnr,'taz']" class="btn-default btn3">Auswählen</a></td>
     </tr>
     </tbody>
   </table>
 </div>
 </div>
-
-<!--<div class="row">-->
-<!--<div *ngFor="let patient of patienten" class="col-lg-4 col-md-4 col-sm-4  fadeInUp" data-wow-delay="0.3s">-->
-<!--<strong>{{patient.name}} </strong>-->
-<!--<p>{{patient.description}}</p>-->
-<!--<a  [routerLink]="['/patient',patient.id,patient.fallnr,'']" class="btn-default btn3">Auswählen</a>-->
-<!--&lt;!&ndash;<a  [routerLink]="['/patient',patient.fallnr,patient.careTeam[0].name]" class="btn-default btn3">Auswählen</a>&ndash;&gt;-->
-<!--&lt;!&ndash;<a  [routerLink]="['/patient',patient.fallnr]" class="btn-default btn3">Auswählen</a>&ndash;&gt;-->
-<!--</div>-->
-<!--</div>-->

@@ -16,12 +16,36 @@
       "id": "2",
       "url": "assets/medical/doctor3.jpg",
       "name": "Frau MusterFrau",
-      "beschreibung": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  et dolore magna aliquyam erat, sed diam voluptua.",
+      "beschreibung": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
       "fallnr": "kffe412",
       "aufnahmeDatum": "15.05.2018",
       "entlassungDatum": "25.07.2018",
       "gebDatum": "12.05.1985",
       "krankenkasse": "TK Hessen",
+      "geschlecht": "W"
+    },
+    {
+      "id": "3",
+      "url": "assets/medical/doctor3.jpg",
+      "name": "Herr Müller",
+      "beschreibung": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+      "fallnr": "muel412",
+      "aufnahmeDatum": "15.07.2018",
+      "entlassungDatum": "25.07.2018",
+      "gebDatum": "12.08.1989",
+      "krankenkasse": "Barmer",
+      "geschlecht": "M"
+    },
+    {
+      "id": "4",
+      "url": "assets/medical/doctor3.jpg",
+      "name": "Frau Meier",
+      "beschreibung": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr",
+      "fallnr": "fmeie412",
+      "aufnahmeDatum": "10.07.2018",
+      "entlassungDatum": "25.07.2018",
+      "gebDatum": "12.10.1992",
+      "krankenkasse": "Die Bayerische",
       "geschlecht": "W"
     }
   ],
@@ -124,6 +148,22 @@
       "role": "visitor",
       "name": "Herr Ngatchou",
       "beschreibung": "angehörig"
+    },
+    {
+      "id": "5",
+      "patientenId": "3",
+      "kuerzel": "fdl",
+      "role": "admin",
+      "name": "Dr Friedl",
+      "beschreibung": "Chef Artz"
+    },
+    {
+      "id": "6",
+      "patientenId": "4",
+      "kuerzel": "taz",
+      "role": "pflege",
+      "name": "Frau Tänzer",
+      "beschreibung": "pflegerin"
     }
   ],
   "medikamente": [
@@ -231,6 +271,22 @@
     {
       "id": "2",
       "patientenId": "2",
+      "title": "Schizophrenie",
+      "hauptdiagnose": "Schizophrenie ",
+      "nebendiagnose": "Schizophrenie",
+      "besonderheiten": "keine"
+    },
+    {
+      "id": "3",
+      "patientenId": "3",
+      "title": "Diabetes Mellitus",
+      "hauptdiagnose": "Diabetes Mellitus",
+      "nebendiagnose": "Chronische Nierenkrankheit",
+      "besonderheiten": "Essentielle (primäre) Hypertonie"
+    },
+    {
+      "id": "4",
+      "patientenId": "4",
       "title": "Schizophrenie",
       "hauptdiagnose": "Schizophrenie ",
       "nebendiagnose": "Schizophrenie",

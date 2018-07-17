@@ -148,9 +148,17 @@ export class PatientVitalparameterComponent implements OnInit {
   }
   // This method associate to New Button.
   onNew() {
-    this.zeichen = this.vitalzeichen[0];
+    // this.zeichen = this.vitalzeichen[0];
+    this.zeichen = new Vitalzeichen();
+    this.zeichen.puls = 'BPM';
+    this.zeichen.zucker = 'mg';
+    this.zeichen.temperatur = ' ';
+    this.zeichen.diastolisch = ' ';
+    this.zeichen.systolisch = ' ';
+
     this.vitalparamForm.setValue({ puls: this.zeichen.puls, systolisch: this.zeichen.systolisch,
       diastolisch: this.zeichen.diastolisch, temperatur: this.zeichen.temperatur, zucker: this.zeichen.zucker});
+
 // Change submitType to 'Save'.
     this.submitType = 'Save';
 // display registration entry section.

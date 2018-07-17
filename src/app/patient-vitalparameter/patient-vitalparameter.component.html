@@ -19,9 +19,9 @@
         <td >{{zeichen.lastModifiedDate}}</td>
         <td>{{zeichen.systolisch}}</td>
         <td>{{zeichen.diastolisch}}</td>
-        <td>{{zeichen.puls}} BPM</td>
+        <td>{{zeichen.puls}}</td>
         <td>{{zeichen.temperatur}} °C</td>
-        <td>{{zeichen.zucker}} mg</td>
+        <td>{{zeichen.zucker}}</td>
         <td><button *ngIf="isAdmin || isPflege"  class="glyphicon glyphicon-pencil btn bg-success" (click)="loadVitalzeichenToEdit(i)"></button> </td>
         <td><button *ngIf="isAdmin" class="glyphicon glyphicon-trash btn btn-danger" (click)="deleteVitalzeichen(i)"></button></td>
       </tr>

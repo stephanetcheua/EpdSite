@@ -1,6 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Subscription} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {Team} from '../class/patient';
 
 @Component({
   selector: 'app-patienten-list',
@@ -10,13 +9,10 @@ import {ActivatedRoute} from "@angular/router";
 export class PatientenListComponent implements OnInit {
 
   @Input() patienten = [];
-
+  careTeam: Team;
   constructor() {
-
   }
-
   ngOnInit() {
-
   }
 
 }
